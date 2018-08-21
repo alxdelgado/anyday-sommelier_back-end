@@ -7,8 +7,9 @@ class Wine(models.Model):
     return self.type
 
 class Food(models.Model):
-  entree = models.CharField(max_length=100)
-  main_ingredient = models.CharField(max_length=100)
+  type = models.CharField(max_length=100)
+  example_1 = models.CharField(max_length=100)
+  example_2 = models.CharField(max_length=100)
 
   def __str__(self):
     return self.entree

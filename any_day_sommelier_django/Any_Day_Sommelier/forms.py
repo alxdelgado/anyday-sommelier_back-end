@@ -9,7 +9,7 @@ class WineForm(forms.ModelForm):
 class FoodForm(forms.ModelForm):
   class Meta:
     model = Food
-    fields = ('entree', 'main_ingredient')
+    fields = ('type', 'example_1', 'example_2')
 
 class UserForm(forms.ModelForm):
   class Meta:
