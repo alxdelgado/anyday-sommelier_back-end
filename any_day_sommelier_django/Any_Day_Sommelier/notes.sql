@@ -1,8 +1,8 @@
 
-DROP DATABASE IF EXISTS anyday;
-CREATE DATABASE anyday;
+DROP DATABASE IF EXISTS any_day_sommelier;
+CREATE DATABASE any_day_sommelier;
 
-\c anyday
+\c any_day_sommelier
 
 CREATE TABLE wine (
   id SERIAL PRIMARY KEY,
@@ -23,17 +23,11 @@ CREATE TABLE user (
 );
 
 CREATE TABLE pairing (
-<<<<<<< HEAD
+
   id SERIAL PRIMARY KEY,
   wine_id INTEGER REFERENCES wine(id),
   food_id INTEGER REFERENCES food(id)
 );
-=======
-  id SERIAL PRIMARY KEY, 
-  wine_id INTEGER REFERENCES wine(id), 
-  food_id INTEGER REFERENCES food(id)  
-);.
->>>>>>> e4e9a16d1f449c3cbaf6cf1df08ebcc3c73d98f1
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY,
@@ -67,7 +61,7 @@ INSERT INTO food
   ('Poultry', 'Chicken', 'Duck'),
   ('Fish', 'Tuna', 'Cod'),
   ('Shellfish', 'Lobster', 'Crab'),
-  ('Cured Meat', 'Salami', 'Proscuitto'), 
+  ('Cured Meat', 'Salami', 'Proscuitto'),
   ('Mollusk', 'Oyster', 'Mussels'),
   ('Soft Cheese', 'Brie', 'Mascarpone'),
   ('Pungent Cheese', 'Bleu Cheese', 'Gorgonzola'),
@@ -80,17 +74,17 @@ INSERT INTO pairing
   (11, 1),
   (7, 1),
   (8, 1),
-  (5, 6), 
-  (12, 6), 
+  (5, 6),
+  (12, 6),
   (1, 6),
-  (9, 2), 
+  (9, 2),
   (6, 2),
   (5, 3),
   (4, 3),
-  (2, 4), 
+  (2, 4),
   (4, 4),
-  (4, 5), 
-  (2, 5), 
+  (4, 5),
+  (2, 5),
   (10, 5),
   (2, 7),
   (13, 7),
