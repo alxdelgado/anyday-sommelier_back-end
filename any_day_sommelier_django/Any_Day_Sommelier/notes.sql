@@ -1,8 +1,8 @@
 
-DROP DATABASE IF EXISTS anyday;
-CREATE DATABASE anyday;
+DROP DATABASE IF EXISTS any_day_sommelier;
+CREATE DATABASE any_day_sommelier;
 
-\c anyday
+\c any_day_sommelier
 
 CREATE TABLE wine (
   id SERIAL PRIMARY KEY,
@@ -26,7 +26,7 @@ CREATE TABLE pairing (
   id SERIAL PRIMARY KEY, 
   wine_id INTEGER REFERENCES wine(id), 
   food_id INTEGER REFERENCES food(id)  
-);.
+);
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY,
@@ -100,18 +100,18 @@ INSERT INTO pairing
 
 
 
-ROUTES------------------
+-- ROUTES------------------
 
 
-/                 GET         index         Home
-*/pairing          GET         index         Index of all pairings
-*/wine/:id         GET         show          Show individual wine - and which entrees it goes with
-*/wine             GET         index         Index of all wines
-*/food/:id         GET         show          Show individual dish - and wines it goes with
-*/food             GET         index         Index all dishes
-/auth             POST        create        Create new user
-/auth/:id         GET         show          View user profile - including their liked pairings
-/auth/:id         DELETE      destroy       Destroy account
-/auth/:id/edit    PUT         update        update profile -- would this be for adding a pairing to favorites?
-/upvote?
-/downvote?
+-- /                 GET         index         Home
+-- */pairing          GET         index         Index of all pairings
+-- */wine/:id         GET         show          Show individual wine - and which entrees it goes with
+-- */wine             GET         index         Index of all wines
+-- */food/:id         GET         show          Show individual dish - and wines it goes with
+-- */food             GET         index         Index all dishes
+-- /auth             POST        create        Create new user
+-- /auth/:id         GET         show          View user profile - including their liked pairings
+-- /auth/:id         DELETE      destroy       Destroy account
+-- /auth/:id/edit    PUT         update        update profile -- would this be for adding a pairing to favorites?
+-- /upvote?
+-- /downvote?

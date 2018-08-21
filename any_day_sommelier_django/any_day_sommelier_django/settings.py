@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'any_day_sommelier', 
+    'Any_Day_Sommelier', 
     'rest_framework'
 ]
 
@@ -143,6 +143,6 @@ STATICFILES_DIRS = (
 
 
 # Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
-parent of 11807f7... things were added to make heroku work
+# import django_heroku
+# django_heroku.settings(locals())
+# parent of 11807f7... things were added to make heroku work
