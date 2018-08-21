@@ -115,3 +115,4 @@ INSERT INTO pairing
 -- /auth/:id/edit    PUT         update        update profile -- would this be for adding a pairing to favorites?
 -- /upvote?
 -- /downvote?
+

@@ -25,7 +25,9 @@ SECRET_KEY = 'dhomvvcvp3x9hlm3nr7d1i_x_la8$_pnqrd6s3tzxfh@h5h@8t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+
+LOGIN_REDIRECT_URL = 'admin/'
 
 
 # Application definition
@@ -143,6 +145,8 @@ STATICFILES_DIRS = (
 
 
 # Configure Django App for Heroku.
+
 # import django_heroku
 # django_heroku.settings(locals())
-# parent of 11807f7... things were added to make heroku work
+
+
