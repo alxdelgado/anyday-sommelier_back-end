@@ -1,6 +1,8 @@
 
+DROP DATABASE IF EXISTS anyday;
+CREATE DATABASE anyday;
 
-ERD-----------------
+\c anyday
 
 CREATE TABLE wine (
   id SERIAL PRIMARY KEY,
@@ -9,8 +11,9 @@ CREATE TABLE wine (
 
 CREATE TABLE food (
   id SERIAL PRIMARY KEY,
-  entree VARCHAR(64),
-  main_ingredient VARCHAR(64)
+  type VARCHAR(64),
+  example_1 VARCHAR(64),
+  example_2 VARCHAR(64)
 );
 
 CREATE TABLE user (
@@ -20,16 +23,86 @@ CREATE TABLE user (
 );
 
 CREATE TABLE pairing (
+<<<<<<< HEAD
   id SERIAL PRIMARY KEY,
   wine_id INTEGER REFERENCES wine(id),
   food_id INTEGER REFERENCES food(id)
 );
+=======
+  id SERIAL PRIMARY KEY, 
+  wine_id INTEGER REFERENCES wine(id), 
+  food_id INTEGER REFERENCES food(id)  
+);.
+>>>>>>> e4e9a16d1f449c3cbaf6cf1df08ebcc3c73d98f1
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES user(id),
   pairing_id INTEGER REFERENCES pairing(id)
 );
+
+
+INSERT INTO wine
+  (type)
+  VALUES
+  ('Riesling'),
+  ('Pinot Gris'),
+  ('Sauvignon Blanc'),
+  ('Chardonnay'),
+  ('Pinot Noir'),
+  ('Zinfandel'),
+  ('Syrah'),
+  ('Cabernet Sauvignon'),
+  ('Merlot'),
+  ('Rose'),
+  ('Malbec'),
+  ('Moscato'),
+  ('Champagne');
+
+INSERT INTO food
+  (type, example_1, example_2)
+  VALUES
+  ('Red Meat', 'Beef', 'Lamb'),
+  ('Pork', 'Pork Chop', 'Pork Tenderloin'),
+  ('Poultry', 'Chicken', 'Duck'),
+  ('Fish', 'Tuna', 'Cod'),
+  ('Shellfish', 'Lobster', 'Crab'),
+  ('Cured Meat', 'Salami', 'Proscuitto'), 
+  ('Mollusk', 'Oyster', 'Mussels'),
+  ('Soft Cheese', 'Brie', 'Mascarpone'),
+  ('Pungent Cheese', 'Bleu Cheese', 'Gorgonzola'),
+  ('Hard Cheese', 'Cheddar', 'Asiago'),
+  ('Fruit', 'Strawberry', 'Peach');
+
+INSERT INTO pairing
+  (wine_id, food_id)
+  VALUES
+  (11, 1),
+  (7, 1),
+  (8, 1),
+  (5, 6), 
+  (12, 6), 
+  (1, 6),
+  (9, 2), 
+  (6, 2),
+  (5, 3),
+  (4, 3),
+  (2, 4), 
+  (4, 4),
+  (4, 5), 
+  (2, 5), 
+  (10, 5),
+  (2, 7),
+  (13, 7),
+  (5, 8),
+  (4, 8),
+  (9, 9),
+  (6, 9),
+  (11, 10),
+  (8, 10),
+  (7, 10),
+  (12, 11),
+  (13, 11);
 
 
 
