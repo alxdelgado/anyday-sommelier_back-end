@@ -22,10 +22,16 @@ CREATE TABLE user (
   password VARCHAR(32)
 );
 
+<<<<<<< HEAD
 CREATE TABLE pairing (
+=======
+CREATE TABLE pairing 
+
+>>>>>>> 44f3fcd089aba3df771fef857e2c37a3bf493072
   id SERIAL PRIMARY KEY,
   wine_id INTEGER REFERENCES wine(id),
   food_id INTEGER REFERENCES food(id)
+
 );
 
 CREATE TABLE favorites (
@@ -100,18 +106,18 @@ INSERT INTO pairing
 
 
 
-ROUTES------------------
+-- ROUTES------------------
 
 
-/                 GET         index         Home
-*/pairing          GET         index         Index of all pairings
-*/wine/:id         GET         show          Show individual wine - and which entrees it goes with
-*/wine             GET         index         Index of all wines
-*/food/:id         GET         show          Show individual dish - and wines it goes with
-*/food             GET         index         Index all dishes
-/auth             POST        create        Create new user
-/auth/:id         GET         show          View user profile - including their liked pairings
-/auth/:id         DELETE      destroy       Destroy account
-/auth/:id/edit    PUT         update        update profile -- would this be for adding a pairing to favorites?
-/upvote?
-/downvote?
+-- /                 GET         index         Home
+-- */pairing          GET         index         Index of all pairings
+-- */wine/:id         GET         show          Show individual wine - and which entrees it goes with
+-- */wine             GET         index         Index of all wines
+-- */food/:id         GET         show          Show individual dish - and wines it goes with
+-- */food             GET         index         Index all dishes
+-- /auth             POST        create        Create new user
+-- /auth/:id         GET         show          View user profile - including their liked pairings
+-- /auth/:id         DELETE      destroy       Destroy account
+-- /auth/:id/edit    PUT         update        update profile -- would this be for adding a pairing to favorites?
+-- /upvote?
+-- /downvote?
