@@ -54,6 +54,8 @@ def food_detail(request, pk):
 
 ####### PAIRING #######
 
+# Pairing Index
+
 def pairing_list(request):
   pairings = Pairing.objects.all()
   return render(request, 'any_day_sommelier/pairing_list.html', {'pairing': pairing})
